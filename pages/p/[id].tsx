@@ -57,12 +57,12 @@ const Post: React.FC<PostProps> = (props) => {
         <ReactMarkdown children={props.content} />
 {
   !props.published && userHasValidSession && postBelongsToUser && (
-    <button onClick={() => publishPost(props.id)}>Publish</button>
+    <button onClick={() => publishPost(String(props.id))}>Publish</button>
   )
 }
 {
   userHasValidSession && postBelongsToUser && (
-    <button onClick={() => deletePost(props.id)}>Delete</button>
+    <button onClick={() => deletePost(String(props.id))}>Delete</button>
   )
 }
       </div>
